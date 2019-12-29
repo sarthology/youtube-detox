@@ -67,9 +67,8 @@ footer span img {
 footer{
   display: flex;
   justify-content: center;
-  position: fixed;
   width: 100%;
-  bottom: 30px;
+  margin-top: 25vh;
   font-family: sans-serif;
 }
 .search-suggestion{
@@ -106,8 +105,11 @@ footer{
     .search {
       display: grid;
       grid-template-columns: 1fr;
-      margin-top: 50px;
+      margin-top: 10vh;
       width: 90%;
+    }
+    footer{
+      margin-top: 10vh;
     }
     .input input {
       width:100%;
