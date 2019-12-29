@@ -106,7 +106,7 @@ footer{
     .search {
       display: grid;
       grid-template-columns: 1fr;
-      margin-top: 15vh;
+      margin-top: 50px;
       width: 90%;
     }
     .input input {
