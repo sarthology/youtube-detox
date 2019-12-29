@@ -16,6 +16,7 @@ keyword.onkeyup = e => {
       let history = JSON.parse(localStorage.getItem("history"));
       let seachString =  new RegExp(keyword.value,"gi");
       history.filter(query => query.match(seachString)).forEach(query => {
+        searchSuggestion.style = "display:block";
         var newElement = document.createElement('div');
         newElement.className = "suggestion";
         newElement.onclick = ()=>{clickOnSuggestion(query)}
@@ -27,21 +28,23 @@ keyword.onkeyup = e => {
   
 };
 
-keyword.onblur = e => { 
-  searchSuggestion.innerHTML = ""
-};
+// keyword.onblur = e => { 
+//   searchSuggestion.innerHTML = ""
+// };
 
 keyword.onfocus = e => { 
   let history = JSON.parse(localStorage.getItem("history"));
   searchSuggestion.innerHTML = ""
-
-  history.forEach(query => {
-    var newElement = document.createElement('div');
-    newElement.className = "suggestion";
-    newElement.onclick = ()=>{clickOnSuggestion(query)}
-    newElement.innerHTML = `<p>${query}</p>`;
-    searchSuggestion.appendChild(newElement);
-  });
+  if(history){
+    history.forEach(query => {
+      searchSuggestion.style = "display:block";
+      var newElement = document.createElement('div');
+      newElement.className = "suggestion";
+      newElement.onclick = ()=>{clickOnSuggestion(query)}
+      newElement.innerHTML = `<p>${query}</p>`;
+      searchSuggestion.appendChild(newElement);
+    });
+  }
 };
 
 clickOnSuggestion = query => {

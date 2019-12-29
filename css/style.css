@@ -80,10 +80,12 @@ footer{
   border: 1px solid #e3e3e3;
   border-top: none;
   width: 80%;
-  overflow: scroll;
+  overflow-y: scroll;
+  -webkit-overflow-scrolling: touch;
   scrollbar-width: none;
   max-height: 239px;
-  /* border-bottom: none; */
+  display: none;
+  border-bottom: none;
 }
 .search-suggestion::-webkit-scrollbar { width: 0 !important }
 
@@ -146,4 +148,10 @@ footer{
     from { transform: translate(0,  0px); }
     65%  { transform: translate(0, 15px); }
     to   { transform: translate(0, -0px); }    
+}
+input:focus,
+select:focus,
+textarea:focus,
+button:focus {
+    outline: none;
 }
