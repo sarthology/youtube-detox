@@ -28,9 +28,9 @@ keyword.onkeyup = e => {
   
 };
 
-// keyword.onblur = e => { 
-//   searchSuggestion.innerHTML = ""
-// };
+keyword.onblur = e => { 
+  searchSuggestion.innerHTML = ""
+};
 
 keyword.onfocus = e => { 
   let history = JSON.parse(localStorage.getItem("history"));

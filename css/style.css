@@ -105,11 +105,11 @@ footer{
     .search {
       display: grid;
       grid-template-columns: 1fr;
-      margin-top: 10vh;
+      margin-top: 50px;
       width: 90%;
     }
     footer{
-      margin-top: 10vh;
+      margin-top: 50px;
     }
     .input input {
       width:100%;
