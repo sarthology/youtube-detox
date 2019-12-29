@@ -3,24 +3,27 @@ let searchSuggestion = document.getElementById("search-suggestion");
 let suggestion = document.querySelector(".suggestion");
 
 keyword.onkeyup = e => {
-  searchSuggestion.innerHTML = ""
-  if (e.keyCode === 13) {
-    saveQuery(keyword.value) 
-    window.location =
-      "https://www.youtube.com/results?search_query=" +
-      keyword.value.split(" ").join("+");
-  }
+  if(keyword.value.trim() == "") return
   else{
-    let history = JSON.parse(localStorage.getItem("history"));
-    let seachString =  new RegExp(keyword.value,"gi");
-    history.filter(query => query.match(seachString)).forEach(query => {
-      var newElement = document.createElement('div');
-      newElement.className = "suggestion";
-      newElement.onclick = ()=>{clickOnSuggestion(query)}
-      newElement.innerHTML = `<p>${query}</p>`;
-      searchSuggestion.appendChild(newElement);
-    });
-  };
+    searchSuggestion.innerHTML = ""
+    if (e.keyCode === 13) {
+      saveQuery(keyword.value) 
+      window.location =
+        "https://www.youtube.com/results?search_query=" +
+        keyword.value.split(" ").join("+");
+    }
+    else{
+      let history = JSON.parse(localStorage.getItem("history"));
+      let seachString =  new RegExp(keyword.value,"gi");
+      history.filter(query => query.match(seachString)).forEach(query => {
+        var newElement = document.createElement('div');
+        newElement.className = "suggestion";
+        newElement.onclick = ()=>{clickOnSuggestion(query)}
+        newElement.innerHTML = `<p>${query}</p>`;
+        searchSuggestion.appendChild(newElement);
+      });
+    };
+  }
   
 };
 
