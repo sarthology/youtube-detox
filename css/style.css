@@ -73,8 +73,8 @@ footer{
 }
 .search-suggestion{
   position: absolute;
-  top: 130px;
-  left: 50px;
+  top: 103px;
+  left: 66px;
   background:white;
   border: 1px solid #e3e3e3;
   border-top: none;
@@ -105,21 +105,23 @@ footer{
     .search {
       display: grid;
       grid-template-columns: 1fr;
-      margin-top: 50px;
+      margin-top: 90px;
       width: 90%;
     }
     footer{
-      margin-top: 50px;
+      margin-top: 100px;
     }
     .input input {
       width:100%;
       margin: 0;
+      height: 74px;
+      font-size: 30px;
     }
     .search-suggestion {
       width: 100%;
       max-height: 145px;
-      top: 103px;
-      left: 0;
+      top: 77px;
+      left: -1px;
     }
     .icon{
       display: flex;

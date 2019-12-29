@@ -3,7 +3,8 @@ let searchSuggestion = document.getElementById("search-suggestion");
 let suggestion = document.querySelector(".suggestion");
 
 keyword.onkeyup = e => {
-  if(keyword.value.trim() == "") return
+  searchSuggestion.innerHTML = ""
+  if(keyword.value.trim() === "") return
   else{
     searchSuggestion.innerHTML = ""
     if (e.keyCode === 13) {
@@ -16,7 +17,6 @@ keyword.onkeyup = e => {
       renderSuggestions( history.filter(query => query.match(seachString)));     
     };
   }
-  
 };
 
 keyword.onblur = e => { 
@@ -38,6 +38,7 @@ clickOnSuggestion = query => {
 const saveQuery = query => {
   if(localStorage.getItem("history")){
     let oldHistory = JSON.parse(localStorage.getItem("history"))
+    if(oldHistory.includes(query)) return
     oldHistory.push(query);
     let history = JSON.stringify(oldHistory);
     localStorage.setItem("history",history)
