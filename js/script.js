@@ -19,10 +19,6 @@ keyword.onkeyup = e => {
   }
 };
 
-keyword.onblur = e => { 
-  searchSuggestion.innerHTML = ""
-};
-
 keyword.onfocus = e => { 
   let history = JSON.parse(localStorage.getItem("history"));
   searchSuggestion.innerHTML = ""
@@ -30,10 +26,6 @@ keyword.onfocus = e => {
     renderSuggestions(history);
   }
 };
-
-clickOnSuggestion = query => {
-  searchYoutube(query);
-}
 
 const saveQuery = query => {
   if(localStorage.getItem("history")){
@@ -58,6 +50,11 @@ const renderSuggestions = history =>{
     newElement.innerHTML = `<p>${query}</p>`;
     searchSuggestion.appendChild(newElement);
   });
+}
+
+clickOnSuggestion = query => {
+  searchSuggestion.innerHTML = ""
+  searchYoutube(query);
 }
 
 const searchYoutube = query =>{
