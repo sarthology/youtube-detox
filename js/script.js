@@ -53,11 +53,11 @@ const renderSuggestions = history =>{
 }
 
 clickOnSuggestion = query => {
-  searchSuggestion.innerHTML = ""
   searchYoutube(query);
 }
 
 const searchYoutube = query =>{
+  searchSuggestion.innerHTML = ""
   window.location =
         "https://www.youtube.com/results?search_query=" +
         query.split(" ").join("+");
