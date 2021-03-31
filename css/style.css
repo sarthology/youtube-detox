@@ -46,8 +46,10 @@ body {
 
 .input {
     display: -webkit-flex;
+    flex-direction: column;
     justify-content: center;
     position: relative;
+    text-align: center;
 }
 
 .input input {
@@ -59,7 +61,7 @@ body {
     border-bottom-style: none;
     border-bottom-width: medium;
     border-bottom: 1px solid #e3e3e3;
-    margin-left: 50px;
+    margin: auto;
 }
 
 #keyword {
@@ -93,10 +95,11 @@ footer {
 }
 
 .search-suggestion {
-    position: absolute;
+    /* position: absolute;
     top: 103px;
-    left: 107px;
-    background: white;
+    left: 107px; */
+    margin: auto;
+    color: white;
     border: 1px solid #e3e3e3;
     border-top: none;
     width: 80%;
@@ -134,19 +137,20 @@ footer {
     footer {
         margin-top: 100px;
     }
-
+.input{
+    margin: auto;
+    width: 80%;
+}
     .input input {
         width: 100%;
-        margin: 0;
-        height: 74px;
         font-size: 30px;
+        margin: auto;
     }
 
     .search-suggestion {
-        width: 100%;
+        margin: auto;
+        width: 80%;
         max-height: 145px;
-        top: 77px;
-        left: -1px;
     }
 
     .icon {
@@ -175,6 +179,9 @@ footer {
 
     .producthunt img {
         width: 50px;
+    }
+    .search{
+        margin: auto;
     }
 }
 
